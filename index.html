@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Desbaies by malenkiki</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Desbaies</h1>
+          <h2>Some classes for create SQL query without SQL code. Allow execution too, but there are not ORM layer.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/malenkiki/desbaies/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/malenkiki/desbaies/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/malenkiki/desbaies" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p>Some classes for create SQL query without SQL code. Allow execution too, but there are not ORM layer.</p>
+
+<p>Simple example:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Malenki\DesBaies\DesBaies</span><span class="p">();</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">select</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">);</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">from</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">);</span>
+</pre></div>
+
+<p>give:</p>
+
+<div class="highlight highlight-sql"><pre><span class="k">SELECT</span> <span class="o">`</span><span class="n">foo</span><span class="o">`</span>
+<span class="k">FROM</span> <span class="o">`</span><span class="n">bar</span><span class="o">`</span><span class="p">;</span>
+</pre></div>
+
+<p>More complex example:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Malenki\DesBaies\DesBaies</span><span class="p">();</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">select</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'foo2'</span><span class="p">,</span> <span class="s1">'b2'</span><span class="p">);</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">from</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">);</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">from</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">'bar2'</span><span class="p">,</span> <span class="s1">'b2'</span><span class="p">);</span>
+<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">order</span><span class="o">-&gt;</span><span class="na">by</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">desc</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">by</span><span class="p">(</span><span class="s1">'foo2'</span><span class="p">,</span> <span class="s1">'b2'</span><span class="p">);</span>
+</pre></div>
+
+<p>give:</p>
+
+<div class="highlight highlight-php"><pre><span class="nx">SELECT</span> <span class="sb">`b`</span><span class="o">.</span><span class="sb">`foo`</span><span class="p">,</span> <span class="sb">`b2`</span><span class="o">.</span><span class="sb">`foo2`</span>
+<span class="nx">FROM</span> <span class="sb">`bar`</span> <span class="k">AS</span> <span class="sb">`b`</span><span class="p">,</span> <span class="sb">`bar2`</span> <span class="k">AS</span> <span class="sb">`b2`</span>
+<span class="nx">ORDER</span> <span class="nx">BY</span> <span class="sb">`b`</span><span class="o">.</span><span class="sb">`foo`</span> <span class="nx">DESC</span><span class="p">,</span> <span class="sb">`b2`</span><span class="o">.</span><span class="sb">`foo2`</span> <span class="nx">ASC</span><span class="p">;</span>
+</pre></div>
+        </section>
+
+        <footer>
+          Desbaies is maintained by <a href="https://github.com/malenkiki">malenkiki</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
