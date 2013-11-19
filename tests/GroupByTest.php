@@ -1,6 +1,6 @@
 <?php
-include_once('OrderBy.php');
-include_once('GroupBy.php');
+include_once('src/Malenki/DesBaies/OrderBy.php');
+include_once('src/Malenki/DesBaies/GroupBy.php');
 
 class GroupByTest extends PHPUnit_Framework_TestCase
 {

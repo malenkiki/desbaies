@@ -1,6 +1,6 @@
 <?php
-include_once('From.php');
-include_once('Stack/From.php');
+include_once('src/Malenki/DesBaies/From.php');
+include_once('src/Malenki/DesBaies/Stack/From.php');
 
 class Stack_FromTest extends PHPUnit_Framework_TestCase
 {

@@ -1,5 +1,5 @@
 <?php
-include_once('Where.php');
+include_once('src/Malenki/DesBaies/Where.php');
 
 class WhereTest extends PHPUnit_Framework_TestCase
 {

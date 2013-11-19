@@ -1,6 +1,6 @@
 <?php
-include_once('Where.php');
-include_once('Having.php');
+include_once('src/Malenki/DesBaies/Where.php');
+include_once('src/Malenki/DesBaies/Having.php');
 
 class HavingTest extends PHPUnit_Framework_TestCase
 {

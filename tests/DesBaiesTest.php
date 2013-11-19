@@ -1,12 +1,12 @@
 <?php
 
-include_once('DesBaies.php');
-include_once('Stack/Select.php');
-include_once('Stack/From.php');
-include_once('Stack/Where.php');
-include_once('Stack/Having.php');
-include_once('Stack/OrderBy.php');
-include_once('Stack/GroupBy.php');
+include_once('src/Malenki/DesBaies/DesBaies.php');
+include_once('src/Malenki/DesBaies/Stack/Select.php');
+include_once('src/Malenki/DesBaies/Stack/From.php');
+include_once('src/Malenki/DesBaies/Stack/Where.php');
+include_once('src/Malenki/DesBaies/Stack/Having.php');
+include_once('src/Malenki/DesBaies/Stack/OrderBy.php');
+include_once('src/Malenki/DesBaies/Stack/GroupBy.php');
 
 class DesBaiesTest extends PHPUnit_Framework_TestCase
 {

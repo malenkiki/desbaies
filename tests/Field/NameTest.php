@@ -1,6 +1,6 @@
 <?php
 
-include_once('Field/Name.php');
+include_once('src/Malenki/DesBaies/Field/Name.php');
 
 class NameTest extends PHPUnit_Framework_TestCase
 {

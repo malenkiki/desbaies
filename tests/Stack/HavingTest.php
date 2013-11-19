@@ -1,6 +1,6 @@
 <?php
-include_once('Having.php');
-include_once('Stack/Having.php');
+include_once('src/Malenki/DesBaies/Having.php');
+include_once('src/Malenki/DesBaies/Stack/Having.php');
 
 class Stack_HavingTest extends PHPUnit_Framework_TestCase
 {

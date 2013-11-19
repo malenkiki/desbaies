@@ -57,7 +57,7 @@ class DesBaies
         }
         else
         {
-            throw new \InvalidArgumentException(_('Limit must be zero or positive integer.'));
+            throw new \InvalidArgumentException('Limit must be zero or positive integer.');
         }
     }
 
@@ -70,7 +70,7 @@ class DesBaies
         }
         else
         {
-            throw new \InvalidArgumentException(_('Offset must be zero or positive integer.'));
+            throw new \InvalidArgumentException('Offset must be zero or positive integer.');
         }
     }
 

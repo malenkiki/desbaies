@@ -18,7 +18,7 @@ class Value
     {
         if(is_array($mixed) && count($mixed) == 0)
         {
-            throw new \InvalidArgumentException(_('Array must contain at least one value'));
+            throw new \InvalidArgumentException('Array must contain at least one value');
         }
 
         $fv = new self($mixed);

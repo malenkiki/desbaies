@@ -1,5 +1,5 @@
 <?php
-include_once('OrderBy.php');
+include_once('src/Malenki/DesBaies/OrderBy.php');
 
 class OrderByTest extends PHPUnit_Framework_TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-include_once('Field/Value.php');
+include_once('src/Malenki/DesBaies/Field/Value.php');
 
 class ValueTest extends PHPUnit_Framework_TestCase
 {

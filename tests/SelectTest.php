@@ -1,5 +1,5 @@
 <?php
-include_once('Select.php');
+include_once('src/Malenki/DesBaies/Select.php');
 
 class SelectTest extends PHPUnit_Framework_TestCase
 {

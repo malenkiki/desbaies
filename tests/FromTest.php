@@ -1,5 +1,5 @@
 <?php
-include_once('From.php');
+include_once('src/Malenki/DesBaies/From.php');
 
 class FromTest extends PHPUnit_Framework_TestCase
 {
