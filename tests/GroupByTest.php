@@ -38,8 +38,7 @@ class GroupByTest extends PHPUnit_Framework_TestCase
     public function testSimpleAsc()
     {
         $ob = new Malenki\DesBaies\GroupBy('field_name');
-        $ob->asc();
-        $this->assertEquals('`field_name` ASC', $ob->render());
+        $this->assertEquals('`field_name` ASC', $ob->asc->render());
     }
 
     public function testSimpleDesc()

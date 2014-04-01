@@ -5,7 +5,24 @@ class GroupBy extends OrderBy
 {
     protected $str_dir = null;
     
-    public function asc()
+    public function __get($name)
+    {
+        if(in_array($name, array( 'desc', 'asc')))
+        {
+            $method = '_'.$name;
+            return $this->$method();
+        }
+    }
+    
+    protected function _desc()
+    {
+        $this->str_dir = 'DESC';
+
+        return $this;
+    }
+
+    
+    protected function _asc()
     {
         $this->str_dir = 'ASC';
 

@@ -27,7 +27,7 @@ class OrderBy extends \SplQueue
 
 
 
-    public function _desc()
+    protected function _desc()
     {
         $this->top()->desc;
 
@@ -35,7 +35,7 @@ class OrderBy extends \SplQueue
     }
 
 
-    public function _asc()
+    protected function _asc()
     {
         $this->top()->asc;
 

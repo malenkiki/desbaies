@@ -191,7 +191,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
         $db = new Malenki\DesBaies\DesBaies();
         $db->select->add('foo');
         $db->from->add('bar');
-        $db->group->by('foo')->asc();
+        $db->group->by('foo')->asc;
 
         $this->assertEquals(
             "SELECT `foo`\nFROM `bar`\nGROUP BY `foo` ASC;",
@@ -231,7 +231,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
         $db->select->add('foo', 'b')->add('foo2', 'b2');
         $db->from->add('bar', 'b');
         $db->from->add('bar2', 'b2');
-        $db->group->by('foo', 'b')->desc->by('foo2', 'b2')->asc();
+        $db->group->by('foo', 'b')->desc->by('foo2', 'b2')->asc;
 
         $this->assertEquals(
             "SELECT `b`.`foo`, `b2`.`foo2`\nFROM `bar` AS `b`, `bar2` AS `b2`\nGROUP BY `b`.`foo` DESC, `b2`.`foo2` ASC;",
