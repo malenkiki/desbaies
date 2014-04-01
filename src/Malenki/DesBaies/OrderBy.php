@@ -8,7 +8,15 @@ class OrderBy
 {
     protected $str_field = null;
     protected $str_dir = 'ASC';
-    
+
+    public function __get($name)
+    {
+        if(in_array($name, array( 'desc', 'asc')))
+        {
+            $method = '_'.$name;
+            return $this->$method();
+        }
+    }
     
     public function __construct($str_field = null, $str_table = null)
     {
@@ -29,12 +37,20 @@ class OrderBy
         return new self();
     }
 
-    public function desc()
+    protected function _desc()
     {
         $this->str_dir = 'DESC';
 
         return $this;
     }
+    
+    protected function _asc()
+    {
+        $this->str_dir = 'ASC';
+
+        return $this;
+    }
+
 
     public function render()
     {

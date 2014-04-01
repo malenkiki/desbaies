@@ -8,6 +8,16 @@ use Malenki\DesBaies\OrderBy as OrderByClause;
 
 class OrderBy extends \SplQueue
 {
+
+    public function __get($name)
+    {
+        if(in_array($name, array( 'desc', 'asc')))
+        {
+            $method = '_'.$name;
+            return $this->$method();
+        }
+    }
+    
     public function by($str_field, $str_table = null)
     {
         $this->push(new OrderByClause($str_field, $str_table));
@@ -17,9 +27,17 @@ class OrderBy extends \SplQueue
 
 
 
-    public function desc()
+    public function _desc()
     {
-        $this->top()->desc();
+        $this->top()->desc;
+
+        return $this;
+    }
+
+
+    public function _asc()
+    {
+        $this->top()->asc;
 
         return $this;
     }

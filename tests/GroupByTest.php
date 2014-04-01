@@ -45,7 +45,7 @@ class GroupByTest extends PHPUnit_Framework_TestCase
     public function testSimpleDesc()
     {
         $ob = new Malenki\DesBaies\GroupBy('field_name');
-        $this->assertEquals('`field_name` DESC', $ob->desc()->render());
+        $this->assertEquals('`field_name` DESC', $ob->desc->render());
     }
 
 }
