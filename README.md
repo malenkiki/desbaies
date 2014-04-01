@@ -25,7 +25,7 @@ $db = new Malenki\DesBaies\DesBaies();
 $db->select->add('foo', 'b')->add('foo2', 'b2');
 $db->from->add('bar', 'b');
 $db->from->add('bar2', 'b2');
-$db->order->by('foo', 'b')->desc()->by('foo2', 'b2');
+$db->order->by('foo', 'b')->desc->by('foo2', 'b2');
 ```
 
 give:
