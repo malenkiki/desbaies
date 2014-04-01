@@ -6,7 +6,9 @@ Some classes for create SQL query without SQL code. Allow execution too, but the
 Simple example:
 
 ``` php
-$db = new Malenki\DesBaies\DesBaies();
+use \Malenki\DesBaies;
+
+$db = new DesBaies();
 $db->select->add('foo');
 $db->from->add('bar');
 ```
@@ -21,7 +23,9 @@ FROM `bar`;
 More complex example:
 
 ``` php
-$db = new Malenki\DesBaies\DesBaies();
+use \Malenki\DesBaies;
+
+$db = new DesBaies();
 $db->select->add('foo', 'b')->add('foo2', 'b2');
 $db->from->add('bar', 'b');
 $db->from->add('bar2', 'b2');
