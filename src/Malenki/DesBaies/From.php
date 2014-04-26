@@ -3,16 +3,14 @@ namespace Malenki\DesBaies;
 
 use Malenki\DesBaies\Field\Name as FieldName;
 
-
 class From
 {
     protected $str_table = null;
     protected $str_alias = null;
-    
+
     public function __construct($str_table = null, $str_alias = null)
     {
-        if($str_table)
-        {
+        if ($str_table) {
             $this->setTable($str_table, $str_alias);
         }
 
@@ -22,8 +20,7 @@ class From
     {
         $this->str_table = FieldName::create($str_table);
 
-        if($str_alias)
-        {
+        if ($str_alias) {
             $this->str_alias = FieldName::create($str_alias);
         }
     }
@@ -35,12 +32,9 @@ class From
 
     public function render()
     {
-        if($this->str_alias)
-        {
+        if ($this->str_alias) {
             return sprintf('%s AS %s', $this->str_table, $this->str_alias);
-        }
-        else
-        {
+        } else {
             return $this->str_table;
         }
     }

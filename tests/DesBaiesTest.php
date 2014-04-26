@@ -22,9 +22,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 (@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
-
 
 class DesBaiesTest extends PHPUnit_Framework_TestCase
 {
@@ -77,7 +75,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     /**
      * @expectedException InvalidArgumentException
      */
@@ -102,7 +100,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testSimpleHavingQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -115,8 +113,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
-    
+
     public function testSimpleOrderByQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -129,7 +126,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testSimpleOrderByDescQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -142,7 +139,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testMultipleOrderByQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -155,7 +152,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testMultipleOrderByWithTableQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -170,9 +167,6 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
         );
     }
 
-
-
-
     public function testSimpleGroupByQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -185,7 +179,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testSimpleGroupByAscQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -198,7 +192,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testSimpleGroupByDescQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -211,7 +205,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testMultipleGroupByQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();
@@ -224,7 +218,7 @@ class DesBaiesTest extends PHPUnit_Framework_TestCase
             $db->render()
         );
     }
-    
+
     public function testMultipleGroupByWithTableQuery()
     {
         $db = new Malenki\DesBaies\DesBaies();

@@ -22,9 +22,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 (@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
-
 
 class Stack_FromTest extends PHPUnit_Framework_TestCase
 {
@@ -43,7 +41,7 @@ class Stack_FromTest extends PHPUnit_Framework_TestCase
         $f->add('tbl_3');
         $this->assertEquals('`tbl_1`, `tbl_2`, `tbl_3`', $f->render());
     }
-    
+
     public function testAddAlias()
     {
         $f = new Malenki\DesBaies\Stack\From();
@@ -74,6 +72,5 @@ class Stack_FromTest extends PHPUnit_Framework_TestCase
             $f->render()
         );
     }
-
 
 }

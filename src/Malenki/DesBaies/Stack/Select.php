@@ -4,8 +4,6 @@ namespace Malenki\DesBaies\Stack;
 
 use Malenki\DesBaies\Select as SelectClause;
 
-
-
 class Select extends \SplQueue
 {
 
@@ -16,15 +14,10 @@ class Select extends \SplQueue
         return $this;
     }
 
-
-
     public function select($str_field, $str_table = null)
     {
         return $this->add($str_field, $str_table);
     }
-
-
-
 
     // TODO
     public function __call($str, $arr)
@@ -36,12 +29,9 @@ class Select extends \SplQueue
             )
         )
         {
-            if(in_array($str, array('subString')))
-            {
+            if (in_array($str, array('subString'))) {
                 $this->top()->$str($arr[0], $arr[1]);
-            }
-            else
-            {
+            } else {
                 $this->top()->$str(array_pop($arr));
             }
 
@@ -56,12 +46,11 @@ class Select extends \SplQueue
 
         $arr = array();
 
-        while($this->valid())
-        {
+        while ($this->valid()) {
             $arr[] = $this->current()->render();
             $this->next();
         }
+
         return implode(', ', $arr);
     }
 }
-

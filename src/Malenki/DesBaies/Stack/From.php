@@ -4,8 +4,6 @@ namespace Malenki\DesBaies\Stack;
 
 use Malenki\DesBaies\From as FromClause;
 
-
-
 class From extends \SplQueue
 {
     public function add($str_table, $str_alias = null)
@@ -15,16 +13,10 @@ class From extends \SplQueue
         return $this;
     }
 
-
-
     public function from($str_table, $str_alias = null)
     {
         return $this->add($str_table, $str_alias);
     }
-
-
-
-
 
     // TODO
     public function render()
@@ -33,8 +25,7 @@ class From extends \SplQueue
 
         $arr = array();
 
-        while($this->valid())
-        {
+        while ($this->valid()) {
             $arr[] = $this->current()->render();
             $this->next();
         }
@@ -42,5 +33,3 @@ class From extends \SplQueue
         return implode(', ', $arr);
     }
 }
-
-

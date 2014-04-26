@@ -4,8 +4,6 @@ namespace Malenki\DesBaies\Stack;
 
 use Malenki\DesBaies\Where as WhereClause;
 
-
-
 class Where extends \SplQueue
 {
     public function add($str_field, $str_table = null)
@@ -15,15 +13,10 @@ class Where extends \SplQueue
         return $this;
     }
 
-
-
     public function where($str_field, $str_table = null)
     {
         return $this->add($str_field, $str_table);
     }
-
-
-
 
     public function addOr($str_field, $str_table = null)
     {
@@ -35,12 +28,10 @@ class Where extends \SplQueue
         return $this;
     }
 
-
     public static function createSubWhere()
     {
         return new self();
     }
-
 
     public function addSub(Where $stack_sub_where)
     {
@@ -73,12 +64,9 @@ class Where extends \SplQueue
             )
         )
         {
-            if(in_array($str, array('isNull', 'isNotNull')))
-            {
+            if (in_array($str, array('isNull', 'isNotNull'))) {
                 $this->top()->$str();
-            }
-            else
-            {
+            } else {
                 $this->top()->$str(array_pop($arr));
             }
 
@@ -91,29 +79,21 @@ class Where extends \SplQueue
         $this->rewind();
 
         $arr_out = array();
-        
-        while($this->valid())
-        {
-            if($this->key() == 0)
-            {
+
+        while ($this->valid()) {
+            if ($this->key() == 0) {
                 $arr_out[] = $this->current()->render();
-            }
-            else
-            {
+            } else {
                 $str_condition = 'AND';
                 $str_printf = '%s %s';
                 $str_render = '';
 
-                if(isset($this->current()->isSubWhere))
-                {
+                if (isset($this->current()->isSubWhere)) {
                     $str_condition = $this->current()->condition;
                     $str_printf = '%s (%s)';
                     $str_render = $this->current()->wheres->render();
-                }
-                else
-                {
-                    if($this->current()->isOr())
-                    {
+                } else {
+                    if ($this->current()->isOr()) {
                         $str_condition = 'OR';
                     }
                     $str_render = $this->current()->render();
@@ -126,8 +106,6 @@ class Where extends \SplQueue
 
         return implode(' ', $arr_out);
     }
-
-
 
     public function __toString()
     {

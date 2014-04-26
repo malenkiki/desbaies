@@ -22,10 +22,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 (@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
-
-
 
 class ValueTest extends PHPUnit_Framework_TestCase
 {
@@ -60,7 +57,7 @@ class ValueTest extends PHPUnit_Framework_TestCase
             Malenki\DesBaies\Field\Value::create(23)
         );
     }
-    
+
     public function testValueArrayNumbers()
     {
         $this->assertEquals(
@@ -68,7 +65,7 @@ class ValueTest extends PHPUnit_Framework_TestCase
             Malenki\DesBaies\Field\Value::create(array(1, 2, 3))
         );
     }
-    
+
     public function testValueArrayStrings()
     {
         $this->assertEquals(
@@ -76,7 +73,7 @@ class ValueTest extends PHPUnit_Framework_TestCase
             Malenki\DesBaies\Field\Value::create(array('one', 'two', 'three'))
         );
     }
-    
+
     public function testValueArrayNulls()
     {
         $this->assertEquals(
@@ -84,7 +81,7 @@ class ValueTest extends PHPUnit_Framework_TestCase
             Malenki\DesBaies\Field\Value::create(array(null, null, null))
         );
     }
-    
+
     public function testValueArrayMixed()
     {
         $this->assertEquals(

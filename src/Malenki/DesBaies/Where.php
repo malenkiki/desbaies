@@ -1,10 +1,8 @@
 <?php
 namespace Malenki\DesBaies;
 
-use \SplStack as SplStack;
 use Malenki\DesBaies\Field\Name as FieldName;
 use Malenki\DesBaies\Field\Value as FieldValue;
-
 
 class Where
 {
@@ -29,12 +27,9 @@ class Where
     protected $str_value = null;
     protected $str_condition = 'AND';
 
-
-
     public function __construct($str_field = null, $str_table = null)
     {
-        if($str_field)
-        {
+        if ($str_field) {
             $this->setField($str_field, $str_table);
         }
 
@@ -50,31 +45,22 @@ class Where
         return new self();
     }
 
-
     public function asOr()
     {
         $this->str_condition = 'OR';
+
         return $this;
     }
-
-
 
     public function isAnd()
     {
         return $this->str_condition == 'AND';
-    } 
-
-
+    }
 
     public function isOr()
     {
         return $this->str_condition == 'OR';
-    } 
-
-
-
-
-
+    }
 
     protected function valuePart($str_operator, $mixed_value)
     {
@@ -92,7 +78,6 @@ class Where
         return $this;
     }
 
-    
     public function in(array $arr)
     {
         return $this->valuePart('IN', $arr);
@@ -103,17 +88,15 @@ class Where
         return $this->valuePart('NOTIN', $arr);
     }
 
-
     public function isNull()
     {
         return $this->valuePart('IS', null);
     }
-    
+
     public function isNotNull()
     {
         return $this->valuePart('ISNOT', null);
     }
-
 
     public function eq($mixed)
     {
@@ -134,7 +117,6 @@ class Where
         return $this->valuePart('GE', $mixed);
     }
 
-
     public function lt($mixed)
     {
         return $this->valuePart('LT', $mixed);
@@ -144,8 +126,6 @@ class Where
     {
         return $this->valuePart('LE', $mixed);
     }
-
-
 
     public function eqf($str_field, $str_table = null)
     {
@@ -165,7 +145,6 @@ class Where
     {
         return $this->valuePartAsField('GE', $str_field, $str_table);
     }
-
 
     public function ltf($str_field, $str_table = null)
     {

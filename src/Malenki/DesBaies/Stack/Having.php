@@ -4,8 +4,6 @@ namespace Malenki\DesBaies\Stack;
 
 use Malenki\DesBaies\Having as HavingClause;
 
-
-
 class Having extends Where
 {
 
@@ -15,7 +13,7 @@ class Having extends Where
 
         return $this;
     }
-    
+
     public function addOr($str_field, $str_table = null)
     {
         $or = new HavingClause($str_field, $str_table);
@@ -25,7 +23,7 @@ class Having extends Where
 
         return $this;
     }
-    
+
     public function addSub(Having $stack_sub_having)
     {
         $stack = new \stdClass();
@@ -47,36 +45,27 @@ class Having extends Where
 
         return $this;
     }
-    
-    
+
     public function render()
     {
         $this->rewind();
 
         $arr_out = array();
-        
-        while($this->valid())
-        {
-            if($this->key() == 0)
-            {
+
+        while ($this->valid()) {
+            if ($this->key() == 0) {
                 $arr_out[] = $this->current()->render();
-            }
-            else
-            {
+            } else {
                 $str_condition = 'AND';
                 $str_printf = '%s %s';
                 $str_render = '';
 
-                if(isset($this->current()->isSubHaving))
-                {
+                if (isset($this->current()->isSubHaving)) {
                     $str_condition = $this->current()->condition;
                     $str_printf = '%s (%s)';
                     $str_render = $this->current()->havings->render();
-                }
-                else
-                {
-                    if($this->current()->isOr())
-                    {
+                } else {
+                    if ($this->current()->isOr()) {
                         $str_condition = 'OR';
                     }
                     $str_render = $this->current()->render();

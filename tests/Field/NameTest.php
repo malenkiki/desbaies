@@ -22,14 +22,10 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 (@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
-
-
 
 class NameTest extends PHPUnit_Framework_TestCase
 {
-
 
     public function testFieldNameAlone()
     {
@@ -39,8 +35,6 @@ class NameTest extends PHPUnit_Framework_TestCase
         );
     }
 
-
-
     public function testFieldNameFull()
     {
         $this->assertEquals(
@@ -49,8 +43,6 @@ class NameTest extends PHPUnit_Framework_TestCase
         );
     }
 
-
-
     /**
      * @expectedException InvalidArgumentException
      */
@@ -58,8 +50,6 @@ class NameTest extends PHPUnit_Framework_TestCase
     {
         Malenki\DesBaies\Field\Name::create(23);
     }
-
-
 
     /**
      * @expectedException LengthException
@@ -70,8 +60,6 @@ class NameTest extends PHPUnit_Framework_TestCase
 
     }
 
-
-
     /**
      * @expectedException InvalidArgumentException
      */
@@ -80,8 +68,6 @@ class NameTest extends PHPUnit_Framework_TestCase
         Malenki\DesBaies\Field\Name::create('field_name', 23);
     }
 
-    
-    
     /**
      * @expectedException InvalidArgumentException
      */

@@ -3,7 +3,6 @@ namespace Malenki\DesBaies;
 
 use Malenki\DesBaies\Field\Name as FieldName;
 
-
 class OrderBy
 {
     protected $str_field = null;
@@ -11,17 +10,16 @@ class OrderBy
 
     public function __get($name)
     {
-        if(in_array($name, array( 'desc', 'asc')))
-        {
+        if (in_array($name, array( 'desc', 'asc'))) {
             $method = '_'.$name;
+
             return $this->$method();
         }
     }
-    
+
     public function __construct($str_field = null, $str_table = null)
     {
-        if($str_field)
-        {
+        if ($str_field) {
             $this->setField($str_field, $str_table);
         }
 
@@ -43,14 +41,13 @@ class OrderBy
 
         return $this;
     }
-    
+
     protected function _asc()
     {
         $this->str_dir = 'ASC';
 
         return $this;
     }
-
 
     public function render()
     {
